@@ -1,0 +1,129 @@
+@keyframes under_line {
+	0% {
+		width: 0;
+		left: 50%;
+	} 100% {
+		width: 100%;
+		left: 0;
+	}
+}
+
+.header {
+	position: fixed;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	background-color: var(--clr-black);
+	z-index: 5;
+	&-menu {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		justify-content: flex-end;
+		gap: 38px;
+		&__item {
+			position: relative;
+			display: flex;
+			height: max-content;
+			gap: 10px;
+			&-text {
+				display: -webkit-box;
+				-webkit-line-clamp: 1;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				color: var(--clr-white);
+			}
+			&:hover::after {
+				position: absolute;
+				content: '';
+				bottom: -8px;
+				left: 0;
+				width: 100%;
+				height: 1px;
+				background-color: var(--clr-white);
+				animation: under_line .25s linear;
+			}
+		}
+		.search {
+			width: 75%;
+			height: 80%;
+			margin-top: 8px;
+		}
+	}
+}
+
+.home-layout {
+	.header {
+		height: 148px;
+		padding-right: 11.51042%;
+		padding-left: 11.61459%;
+		&-logo {
+			min-width: 185px;
+			max-width: 185px;
+		}
+		&-menu__item {
+			padding-top: 57px;
+			&-text {
+				font-size: 18px;
+			}
+			&:first-child {
+				display: none;
+			}
+		}
+		.dropdown {
+			display: none;
+		}
+	}
+}
+
+.default-layout {
+	.header {
+		height: 81px;
+		padding-right: 11.40625%;
+		padding-left: 12.03125%;
+		&-logo {
+			min-width: 112px;
+			max-width: 112px;
+		}
+		&-menu__item {
+			padding-top: 28px;
+			&-text {
+				font-size: 20px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.home-layout,
+	.default-layout {
+		.header {
+			height: 80px;
+			padding-right: 5.319149vw;
+			padding-left: 5.585106vw;
+			&-logo {
+				min-width: 84px;
+				max-width: 84px;
+			}
+			&-menu {
+				gap: 21px;
+				&__item {
+					padding-top: 25px;
+					&-text {
+						display: none;
+					}
+					&-icon:hover {
+						fill: var(--clr-blue);
+						transition: .1s;
+					}
+					&:hover::after {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

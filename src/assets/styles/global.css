@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap');
+@import './add.scss';
+@import './detail.scss';
+@import './favourites.scss';
+@import './header.scss';
+@import './home.scss';
+
+:root {
+  --clr-white: #FFF;
+  --clr-black: #000;
+  --clr-grey: #C4C4C4;
+  --clr-grey-2: #F2F2F2;
+  --clr-grey-3: #BDBDBD;
+  --clr-blue: #325BEC;
+  --clr-yellow: #dcd663;
+  --clr-red: #f13737;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all;
+  transition-duration: 150ms;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+  display: block;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  margin: 0 auto;
+}
+
+.freeze {
+  overflow: hidden;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-white);
+}
+
+img {
+  object-fit: cover;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h6, p {
+  font-weight: 400;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.home-layout .container {
+  margin-top: 148px;
+}
+
+.default-layout .container {
+  margin-top: 81px;
+}
+
+@media screen and (max-width: 768px) {
+	.home-layout .container,
+	.default-layout .container {
+    margin-top: 80px;
+	}
+}

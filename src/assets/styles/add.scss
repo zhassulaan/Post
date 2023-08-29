@@ -1,0 +1,49 @@
+.add {
+	&-title {
+		position: relative;
+		text-align: center;
+		font-size: 72px;
+		padding-top: 110px;
+		&::before {
+			position: absolute;
+			content: '';
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 16px;
+			background-color: var(--clr-grey);
+		}
+	}
+	&-body {
+		display: grid;
+		grid-gap: 16px;
+		margin: 64px 30% 18px;
+	}
+	&-buttons {
+		display: flex;
+		justify-content: center;
+		gap: 16px;
+		margin: 64px auto 18px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.add {
+		&-title {
+			font-size: 54px;
+			padding-top: 75px;
+		}
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.add {
+		&-title {
+			font-size: 36px;
+			padding-top: 40px;
+			&::before {
+				display: none;
+			}
+		}
+	}
+}
